@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Roblox Game Builder Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">🎮 Roblox Builder Pro</div>
+            <div class="discord-link">
+                <a href="https://discord.com/channels/1492834891245555763/1492835035852570666" target="_blank">
+                    💬 Discord Support
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Builder -->
+        <main class="builder-main">
+            <!-- Tools Panel -->
+            <div class="tools-panel">
+                <h2>🛠️ Build Tools</h2>
+                <div class="tool-buttons">
+                    <button class="tool-btn block-tool" data-type="Block">🧱 Block</button>
+                    <button class="tool-btn sphere-tool" data-type="Sphere">🌐 Sphere</button>
+                    <button class="tool-btn cylinder-tool" data-type="Cylinder">📦 Cylinder</button>
+                    <button class="tool-btn spawn-tool" data-type="Spawn">👤 Spawn</button>
+                    <button class="tool-btn kill-tool" data-type="Kill">💀 Kill Brick</button>
+                    <button class="tool-btn clear-tool" id="clearBtn">🗑️ Clear All</button>
+                </div>
+
+                <!-- Properties Panel -->
+                <div class="properties-panel">
+                    <h3>⚙️ Properties</h3>
+                    <label>Color: <input type="color" id="colorPicker" value="#ff6b6b"></label>
+                    <label>Size: <input type="range" id="sizeSlider" min="1" max="10" value="3"></label>
+                    <label>X: <input type="number" id="posX" value="0" min="-50" max="50"></label>
+                    <label>Y: <input type="number" id="posY" value="0" min="-50" max="50"></label>
+                </div>
+            </div>
+
+            <!-- Game Canvas -->
+            <div class="canvas-container">
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+                <div class="canvas-overlay">
+                    <div class="stats">
+                        <span>Parts: <span id="partCount">0</span></span>
+                        <span>Selected: <span id="selectedPart">-</span></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Pricing & Export -->
+        <footer class="pricing-footer">
+            <div class="pricing-grid">
+                <div class="price-card pakistan">
+                    <h3>🇵🇰 Pakistan</h3>
+                    <div class="price">280 <span>PKR</span></div>
+                    <button class="buy-btn" data-country="PK">Buy Now</button>
+                </div>
+                <div class="price-card usa">
+                    <h3>🇺🇸 USA</h3>
+                    <div class="price">$1</div>
+                    <button class="buy-btn" data-country="US">Buy Now</button>
+                </div>
+                <div class="price-card export-free">
+                    <h3>🎁 Free Export</h3>
+                    <div class="price">JSON File</div>
+                    <button class="export-btn" id="exportBtn">📤 Export Game</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="exportModal" class="modal">
+        <div class="modal-content">
+            <h3>🎉 Game Exported!</h3>
+            <p>Your game is ready! Download JSON and import to Roblox Studio.</p>
+            <div class="modal-buttons">
+                <button id="downloadBtn">💾 Download</button>
+                <button id="discordBtn">📤 Send to Discord</button>
+                <button id="closeModal">✕ Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
